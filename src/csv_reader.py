@@ -1,51 +1,89 @@
-
-import pandas as pd
 from pathlib import Path
+import csv
 
-class ExcelFile:
 
+class CSVHeaders:
     def __init__(self, filename) -> None:
         # Read Excel and its specific sheetname
         self._ROOT_DIR = Path(__file__).parent.parent
         self._FILE_PATH = f"{self._ROOT_DIR}\\src\\dataset\\{filename}"
-        self._read_xlsx = pd.read_csv(self._FILE_PATH, )
-        # Dataframe of the CSV file
-        self._df = pd.DataFrame(self._read_xlsx)
-        self.data = self._mapData()
-     
-
-    def _mapData(self)-> dict:
-        '''
-        Map the whole dataframe to convert it to a dictionary.
-
-        return: dictionary 
-        - Format:
-        ------------------------------------
-        {
-            row_number_0 : {
-                item_1 : value_1,
-                item_2 : value_2
-            },
-            row_number_1: {
-                item_1 : value_1,
-                item_2 : value_2
-            }
-        }
-        '''
-        data = {}
-        # Iterate each row from 0 to max row number
-        for row in range(self._df.shape[0]):
-            # Get the data in the row and convert it from DataFrame to Dictionary
-            row_data = dict(self._df.iloc[row])
-            # Iterate each item in the data
-            for key, value in row_data.items():
-                # Check if the data contains "|" which denotes that we will convert it to a list
-                if "|" in str(value): 
-                    row_data[key] = str(value).split(",")
-            # Add the data in the data dictionary
-            data[row] = row_data
-        return data
+        self.data = self.get_data_from_csv()
     
-    def get_specific_row(self, row_number: int):
-        return self.data[row_number - 2]
-   
+    def get_data_from_csv(self):
+        '''Returns a list for how many items in the csv.
+        Each item in the list is a dictionary.
+        The dictionary will have a key from the headers while value are the values under the column/headers.'''
+        # Container of each row of data inside the csv
+        data = []
+        # Open file
+        with open(self._FILE_PATH) as f:
+            # Returns a dictionary. Header columns will act as keys to each row of data.
+            reader = csv.DictReader(f)
+            # Read each row of data as dictionary
+            for row in reader:
+                # key will be header names, value will be the specific row data under specific column
+                for key, value in row.items():
+                    if "|" in str(value):
+                        row[key] = str(value).split("|")
+                data.append(row)
+        return data
+
+class CSVKeyValue(CSVHeaders):
+
+    def __init_subclass__(cls) -> None:
+         return super().__init_subclass__()
+    
+    def get_data_from_csv(self):
+        '''Returns dictionary. First column will be the key while the second column will be the value.'''
+        # Container of each row of data inside the csv
+        data = {}
+        # Open file
+        with open(self._FILE_PATH) as f:
+            # Returns a dictionary. Header columns will act as keys to each row of data.
+            reader = csv.reader(f)
+            # Read each row of data as dictionary
+            for row in reader:
+                if "|" in row[1]:
+                    row[1] = str(row[1]).split("|")
+                data[row[0]] = row[1]
+        return data
+
+class CSVKeyKeyValue(CSVHeaders):
+
+    def __init_subclass__(cls) -> None:
+         return super().__init_subclass__()
+    
+    def get_data_from_csv(self):
+        '''Returns a dictionary within a dictionary.
+        The key will be the first column.
+        The value will be the inner dictionary.
+        Inner dictionary key is the left side of "|"
+        Value will be the one on the right side.
+        Else, if no "|", then True'''
+        # Container of each row of data inside the csv
+        data = {}
+        # Open file
+        with open(self._FILE_PATH) as f:
+            # Returns a dictionary. Header columns will act as keys to each row of data.
+            reader = csv.reader(f)
+            # Read each row of data as dictionary
+            for row in reader:
+                # Container of inner dictionary
+                attrs = {}
+                for attr in row:
+                    # Skip the first column since this is the key of the external dictionary
+                    if attr == row[0] : continue
+                    # The left part is the key, while the right part will be the value separated by '|'
+                    if "|" in attr:
+                        attr = str(attr).split("|")
+                        attrs[attr[0]] = attr[1]
+                    # If no '|', then key is the one placed one the csv, and value is True
+                    else:
+                        attrs[attr] = True
+                data[row[0]] = attrs
+        return data
+
+
+
+
+        

@@ -1,6 +1,6 @@
 from playwright.sync_api import Page, expect
 from WebTestSuites.E2E.login_actions import LoginActions
-from csv_reader import ExcelFile
+from csv_reader import *
 from WebTestSuites.PageContents.login_page import LoginPage
 import logging
 
