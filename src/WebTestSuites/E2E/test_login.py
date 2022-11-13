@@ -1,15 +1,16 @@
 from playwright.sync_api import Page, expect
 from WebTestSuites.E2E.login_actions import LoginActions
-from csv_reader import ExcelFile
+from csv_reader import *
 from WebTestSuites.common import CommonActions
 import logging
 
 
 step = LoginActions
 common_step = CommonActions
-VALID_ACCOUNTS = ExcelFile(filename="valid_accounts.csv")
-INVALID_ACCOUNTS = ExcelFile(filename="invalid_accounts.csv")
-
+VALID_ACCOUNTS = CSVHeaders(filename="invalid_accounts.csv")
+INVALID_ACCOUNTS = CSVHeaders(filename="invalid_accounts.csv")
+KEY_VALUES = CSVKeyValue(filename="key_values.csv")
+KEY_KEY_VALUE = CSVKeyKeyValue(filename="key_key_values.csv")
 
 def test_login_success(page : Page) -> None:
    
@@ -49,4 +50,9 @@ def test_incorrect_email_format(page : Page) -> None:
     # ---Assertions---
     expect(invalid_email_format_message).to_have_text("Incorrect E-Mail address format")
 
+
+def test_key_values():
+    print(KEY_VALUES.data)    
+    print(VALID_ACCOUNTS.data)
+    print(KEY_KEY_VALUE.data)
     
