@@ -30,3 +30,16 @@ def log_page_info(func):
         func(*args, **kwargs)
     return wrapper
 
+def log_assert_actual_expected(func):
+    '''Accept only keyword arguments named actual and expected.'''
+    def wrapper(*args, **kwargs):
+        # kwargs should not have a value of any class/object. 
+        # It SHOULD NOT PASS any keyword arguments with value of a class
+        logging.info(f"""{"-"*25}
+        Function Name:  {func.__name__}()
+        Actual:         {kwargs["actual"]}
+        Expected:       {kwargs["expected"]}""")
+
+        func(*args, **kwargs)
+    return wrapper
+
