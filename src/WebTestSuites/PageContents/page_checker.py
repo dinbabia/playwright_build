@@ -1,7 +1,7 @@
 from playwright.sync_api import Page, expect
 from utils import *
 
-class LoginPage:
+class PageChecker:
 
     @log_page_info
     def check_element_attributes(element, attributes:dict = None):
