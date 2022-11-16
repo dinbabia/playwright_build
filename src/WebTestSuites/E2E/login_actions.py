@@ -4,12 +4,12 @@ from utils import *
 class LoginActions:
 
     @log_info
-    def navigate_to_login_page(page):
+    def navigate_to_homepage(page):
         # Go to hompage
         page.goto("")
         # Click My Account Link to login
-        page.get_by_role("link", name="My Account").click()
-        expect(page).to_have_url("https://www.coilcraft.com/en-us/account/signin/?ReturnUrl=%2Fen-us%2Fprofile%2F")
+        expect(page).to_have_url("https://omayo.blogspot.com/search?q=sdf")
+        expect(page).to_have_title("omayo (QAFox.com): Search results for sdf")
         
     @log_info
     def fill_up_login_form(page,

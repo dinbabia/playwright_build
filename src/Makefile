@@ -1,5 +1,5 @@
 new:
-	playwright codegen https://www.coilcraft.com
+	playwright codegen https://omayo.blogspot.com/search?q=sdf
 
 run_python:
 	py test.py
@@ -14,4 +14,4 @@ w:
 	playwright show-trace test-results\trace.zip
 
 z:
-	pytest -s -k 'test_login_page_contents' --headed --base-url=https://www.coilcraft.com --html=report.html --self-contained-html --log-cli-level=INFO --capture=tee-sys
+	pytest -s -k 'test_select_multiple_options' --headed --base-url=https://omayo.blogspot.com/search?q=sdf --html=report.html --self-contained-html --log-cli-level=INFO --capture=tee-sys

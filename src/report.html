@@ -439,29 +439,29 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>INSERT PROJECT NAME HERE</h1>
-    <p>Report generated on 12-Nov-2022 at 00:25:48 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 15-Nov-2022 at 00:42:40 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
         <td>Base URL</td>
-        <td><a href="https://www.coilcraft.com" target="_blank">https://www.coilcraft.com</a></td></tr>
+        <td><a href="https://omayo.blogspot.com/search?q=sdf" target="_blank">https://omayo.blogspot.com/search?q=sdf</a></td></tr>
       <tr>
         <td>Packages</td>
         <td>{"pluggy": "1.0.0", "pytest": "7.2.0"}</td></tr>
       <tr>
         <td>Platform</td>
-        <td>Windows-10-10.0.19044-SP0</td></tr>
+        <td>Windows-10-10.0.19043-SP0</td></tr>
       <tr>
         <td>Plugins</td>
         <td>{"base-url": "2.0.0", "html": "3.2.0", "metadata": "2.0.4", "playwright": "0.3.0"}</td></tr>
       <tr>
         <td>Python</td>
-        <td>3.10.7</td></tr>
+        <td>3.10.6</td></tr>
       <tr>
         <td>Tester Name</td>
-        <td>Din Babia</td></tr></table>
+        <td>dlcbabia</td></tr></table>
     <h2>Summary</h2>
-    <p>1 tests ran in 7.21 seconds. </p>
+    <p>1 tests ran in 23.43 seconds. </p>
     <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
@@ -476,26 +476,102 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">WebTestSuites/PageContents/test_login_page.py::test_login_page_contents[chromium]</td>
-          <td class="col-duration">6.60</td>
+          <td class="col-name">WebTestSuites/PageContents/test_home_page.py::test_homepage_table[chromium]</td>
+          <td class="col-duration">23.16</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     root:utils.py:10 -------------------------
-        Function Name:   navigate_to_login_page()
+        Function Name:   navigate_to_homepage()
         Current URL:     about:blank
         Page Title:      
         Keyword Arguments: 
 {}
 
 INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_attributes()
-        Element:         (&lt;Locator frame=&lt;Frame name= url=&#x27;https://www.coilcraft.com/en-us/account/signin/?ReturnUrl=%2Fen-us%2Fprofile%2F&#x27;&gt; selector=&#x27;internal:label=Your Email&#x27;&gt;,)
+        Function Name:   check_element_texts_dict()
+        Element:         ()
         Keyword Arguments: 
 {
-  &quot;attributes&quot;: {
-    &quot;data-val-maxlength&quot;: &quot;The maximum length for this field is 254 characters.&quot;,
-    &quot;data-val-maxlength-max&quot;: &quot;254&quot;,
-    &quot;type&quot;: &quot;email&quot;
+  &quot;headers&quot;: [
+    &quot;Name&quot;,
+    &quot;Age&quot;,
+    &quot;Place&quot;
+  ],
+  &quot;actual_list&quot;: [
+    &quot;Kishore&quot;,
+    &quot;22&quot;,
+    &quot;Delhi&quot;
+  ],
+  &quot;expected&quot;: {
+    &quot;Name&quot;: &quot;Kishore&quot;,
+    &quot;Age&quot;: &quot;22&quot;,
+    &quot;Place&quot;: &quot;Delhi&quot;
+  }
+}
+
+INFO     root:utils.py:24 -------------------------
+        Function Name:   check_element_texts_dict()
+        Element:         ()
+        Keyword Arguments: 
+{
+  &quot;headers&quot;: [
+    &quot;Name&quot;,
+    &quot;Age&quot;,
+    &quot;Place&quot;
+  ],
+  &quot;actual_list&quot;: [
+    &quot;Manish&quot;,
+    &quot;25&quot;,
+    &quot;Pune&quot;
+  ],
+  &quot;expected&quot;: {
+    &quot;Name&quot;: &quot;Manish&quot;,
+    &quot;Age&quot;: &quot;25&quot;,
+    &quot;Place&quot;: &quot;Pune&quot;
+  }
+}
+
+INFO     root:utils.py:24 -------------------------
+        Function Name:   check_element_texts_dict()
+        Element:         ()
+        Keyword Arguments: 
+{
+  &quot;headers&quot;: [
+    &quot;Name&quot;,
+    &quot;Age&quot;,
+    &quot;Place&quot;
+  ],
+  &quot;actual_list&quot;: [
+    &quot;Praveen&quot;,
+    &quot;29&quot;,
+    &quot;Bangalore&quot;
+  ],
+  &quot;expected&quot;: {
+    &quot;Name&quot;: &quot;Praveen&quot;,
+    &quot;Age&quot;: &quot;29&quot;,
+    &quot;Place&quot;: &quot;Bangalore&quot;
+  }
+}
+
+INFO     root:utils.py:24 -------------------------
+        Function Name:   check_element_texts_dict()
+        Element:         ()
+        Keyword Arguments: 
+{
+  &quot;headers&quot;: [
+    &quot;Name&quot;,
+    &quot;Age&quot;,
+    &quot;Place&quot;
+  ],
+  &quot;actual_list&quot;: [
+    &quot;Dheepthi&quot;,
+    &quot;31&quot;,
+    &quot;Mumbai&quot;
+  ],
+  &quot;expected&quot;: {
+    &quot;Name&quot;: &quot;Dheepthi&quot;,
+    &quot;Age&quot;: &quot;31&quot;,
+    &quot;Place&quot;: &quot;Mumbai&quot;
   }
 }<br/></div></td></tr></tbody></table></body></html>

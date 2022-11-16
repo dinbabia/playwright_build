@@ -1,3 +1,0 @@
-text_input_email,data-val-maxlength|The maximum length for this field is 254 characters.,data-val-maxlength-max|254,type|email
-text_input_password,data-val-maxlength|The maximum length for this field is 15 characters.,type|password
-checkbox_sample,checked

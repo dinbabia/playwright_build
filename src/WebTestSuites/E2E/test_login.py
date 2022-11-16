@@ -10,11 +10,10 @@ common_step = CommonActions
 VALID_ACCOUNTS = CSVHeaders(filename="invalid_accounts.csv")
 INVALID_ACCOUNTS = CSVHeaders(filename="invalid_accounts.csv")
 KEY_VALUES = CSVKeyValue(filename="key_values.csv")
-KEY_KEY_VALUE = CSVKeyKeyValue(filename="key_key_values.csv")
 
 def test_login_success(page : Page) -> None:
    
-    step.navigate_to_login_page(page)
+    step.navigate_to_homepage(page)
     # Fill up login form
     step.fill_up_login_form(page, email=VALID_ACCOUNTS.data[0]['email'], password=VALID_ACCOUNTS.data[0]['password'])
     # Click Login
@@ -25,7 +24,7 @@ def test_login_success(page : Page) -> None:
 
 def test_empty_email_and_password(page : Page) -> None:
 
-    step.navigate_to_login_page(page)
+    step.navigate_to_homepage(page)
     # Click Login
     step.click_login_button(page)
     #Get validation messages
@@ -39,7 +38,7 @@ def test_empty_email_and_password(page : Page) -> None:
 
 def test_incorrect_email_format(page : Page) -> None:
  
-    step.navigate_to_login_page(page)
+    step.navigate_to_homepage(page)
     # Fill up login form
     step.fill_up_login_form(page, email="invalid_email", password="123")
     # Click Login
@@ -54,5 +53,5 @@ def test_incorrect_email_format(page : Page) -> None:
 def test_key_values():
     print(KEY_VALUES.data)    
     print(VALID_ACCOUNTS.data)
-    print(KEY_KEY_VALUE.data)
+    
     

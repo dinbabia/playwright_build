@@ -1,0 +1,4 @@
+pen,type|checkbox,name|accessories,value|Pen
+book,type|checkbox,name|accessories,value|Book,checked
+laptop,type|checkbox,name|accessories,value|Laptop
+bag,type|checkbox,name|accessories,value|Bag
