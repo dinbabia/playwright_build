@@ -28,7 +28,8 @@ def log_page_info(func):
         Keyword Arguments: 
 {json.dumps(kwargs, indent=2)}\n""")
 
-        func(*args, **kwargs)
+        result = func(*args, **kwargs)
+        return result
     return wrapper
 
 def log_assert_actual_expected(func):
@@ -41,7 +42,8 @@ def log_assert_actual_expected(func):
         Actual:         {kwargs["actual"]}
         Expected:       {kwargs["expected"]}""")
 
-        func(*args, **kwargs)
+        result = func(*args, **kwargs)
+        return result
     return wrapper
 
 def log_test_title(test_title:str):

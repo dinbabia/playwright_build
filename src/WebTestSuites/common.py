@@ -15,16 +15,14 @@ class CommonActions:
 
     @log_info
     def navigate_to_homepage(page):
-        # Go to hompage
+        # Go to test hompage of omayo
         page.goto("")
-        # Click My Account Link to login
         expect(page).to_have_url("https://omayo.blogspot.com/search?q=sdf")
         expect(page).to_have_title("omayo (QAFox.com): Search results for sdf")
 
     @log_info
     def navigate_to_login_page(page):
-        # Go to hompage
+        # Go to saucedemo page
         page.goto("")
-        # Click My Account Link to login
         expect(page).to_have_url("https://www.saucedemo.com/")
         expect(page).to_have_title("Swag Labs")

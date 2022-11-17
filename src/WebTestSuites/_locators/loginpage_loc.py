@@ -8,3 +8,4 @@ login_button_loc = "[data-test=\"login-button\"]"
 '''LOGIN Button in the saucedemo test website'''
 
 error_msg_loc = "[data-test=\"error\"]"
+'''After logging in with invalid credentials. An error message will show.'''
