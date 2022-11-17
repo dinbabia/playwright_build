@@ -439,12 +439,12 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>INSERT PROJECT NAME HERE</h1>
-    <p>Report generated on 17-Nov-2022 at 21:42:07 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 17-Nov-2022 at 23:04:14 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
         <td>Base URL</td>
-        <td><a href="https://omayo.blogspot.com/search?q=sdf" target="_blank">https://omayo.blogspot.com/search?q=sdf</a></td></tr>
+        <td><a href="https://www.saucedemo.com/" target="_blank">https://www.saucedemo.com/</a></td></tr>
       <tr>
         <td>Packages</td>
         <td>{"pluggy": "1.0.0", "pytest": "7.2.0"}</td></tr>
@@ -461,8 +461,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Tester Name</td>
         <td>dlcbabia</td></tr></table>
     <h2>Summary</h2>
-    <p>4 tests ran in 30.99 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">4 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>2 tests ran in 15.13 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">2 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -476,345 +476,96 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">WebTestSuites/PageContents/test_home_page.py::test_homepage_select_multiple_options[chromium]</td>
-          <td class="col-duration">12.23</td>
+          <td class="col-name">WebTestSuites/E2E/test_login.py::test_login_success[chromium]</td>
+          <td class="col-duration">10.11</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     root:utils.py:10 -------------------------
-        Function Name:   navigate_to_homepage()
+        Function Name:   navigate_to_login_page()
         Current URL:     about:blank
         Page Title:      
         Keyword Arguments: 
 {}
 
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_attributes()
-        Element:         (&lt;Locator frame=&lt;Frame name= url=&#x27;https://omayo.blogspot.com/search?q=sdf&#x27;&gt; selector=&#x27;input[name=&quot;accessories&quot;] &gt;&gt; nth=0&#x27;&gt;,)
-        Keyword Arguments: 
-{
-  &quot;attributes&quot;: {
-    &quot;type&quot;: &quot;checkbox&quot;,
-    &quot;name&quot;: &quot;accessories&quot;,
-    &quot;value&quot;: &quot;Pen&quot;
-  }
-}
-
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_attributes()
-        Element:         (&lt;Locator frame=&lt;Frame name= url=&#x27;https://omayo.blogspot.com/search?q=sdf&#x27;&gt; selector=&#x27;input[name=&quot;accessories&quot;] &gt;&gt; nth=1&#x27;&gt;,)
-        Keyword Arguments: 
-{
-  &quot;attributes&quot;: {
-    &quot;type&quot;: &quot;checkbox&quot;,
-    &quot;name&quot;: &quot;accessories&quot;,
-    &quot;value&quot;: &quot;Book&quot;,
-    &quot;checked&quot;: true
-  }
-}
-
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_attributes()
-        Element:         (&lt;Locator frame=&lt;Frame name= url=&#x27;https://omayo.blogspot.com/search?q=sdf&#x27;&gt; selector=&#x27;input[name=&quot;accessories&quot;] &gt;&gt; nth=2&#x27;&gt;,)
-        Keyword Arguments: 
-{
-  &quot;attributes&quot;: {
-    &quot;type&quot;: &quot;checkbox&quot;,
-    &quot;name&quot;: &quot;accessories&quot;,
-    &quot;value&quot;: &quot;Laptop&quot;
-  }
-}
-
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_attributes()
-        Element:         (&lt;Locator frame=&lt;Frame name= url=&#x27;https://omayo.blogspot.com/search?q=sdf&#x27;&gt; selector=&#x27;input[name=&quot;accessories&quot;] &gt;&gt; nth=3&#x27;&gt;,)
-        Keyword Arguments: 
-{
-  &quot;attributes&quot;: {
-    &quot;type&quot;: &quot;checkbox&quot;,
-    &quot;name&quot;: &quot;accessories&quot;,
-    &quot;value&quot;: &quot;Bag&quot;
-  }
-}<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">WebTestSuites/PageContents/test_home_page.py::test_homepage_ordered_unordered_lists[chromium]</td>
-          <td class="col-duration">4.07</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     root:utils.py:10 -------------------------
-        Function Name:   navigate_to_homepage()
-        Current URL:     about:blank
-        Page Title:      
-        Keyword Arguments: 
-{}
-
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_texts_list()
-        Element:         ()
-        Keyword Arguments: 
-{
-  &quot;actual_list&quot;: [
-    &quot;One&quot;,
-    &quot;Two&quot;,
-    &quot;Three&quot;,
-    &quot;Four&quot;,
-    &quot;Five&quot;,
-    &quot;Six&quot;
-  ],
-  &quot;expected_list&quot;: [
-    &quot;One&quot;,
-    &quot;Two&quot;,
-    &quot;Three&quot;,
-    &quot;Four&quot;,
-    &quot;Five&quot;,
-    &quot;Six&quot;
-  ]
-}
-
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_texts_list()
-        Element:         ()
-        Keyword Arguments: 
-{
-  &quot;actual_list&quot;: [
-    &quot;Apple&quot;,
-    &quot;Mango&quot;,
-    &quot;Orange&quot;,
-    &quot;Banana&quot;,
-    &quot;Grapes&quot;,
-    &quot;Pomegranate&quot;
-  ],
-  &quot;expected_list&quot;: [
-    &quot;Apple&quot;,
-    &quot;Mango&quot;,
-    &quot;Orange&quot;,
-    &quot;Banana&quot;,
-    &quot;Grapes&quot;,
-    &quot;Pomegranate&quot;
-  ]
-}<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">WebTestSuites/PageContents/test_home_page.py::test_homepage_table[chromium]</td>
-          <td class="col-duration">5.43</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     root:utils.py:10 -------------------------
-        Function Name:   navigate_to_homepage()
-        Current URL:     about:blank
-        Page Title:      
-        Keyword Arguments: 
-{}
-
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_texts_dict()
-        Element:         ()
-        Keyword Arguments: 
-{
-  &quot;headers&quot;: [
-    &quot;Name&quot;,
-    &quot;Age&quot;,
-    &quot;Place&quot;
-  ],
-  &quot;actual_list&quot;: [
-    &quot;Kishore&quot;,
-    &quot;22&quot;,
-    &quot;Delhi&quot;
-  ],
-  &quot;expected&quot;: {
-    &quot;Name&quot;: &quot;Kishore&quot;,
-    &quot;Age&quot;: &quot;22&quot;,
-    &quot;Place&quot;: &quot;Delhi&quot;
-  }
-}
-
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_texts_dict()
-        Element:         ()
-        Keyword Arguments: 
-{
-  &quot;headers&quot;: [
-    &quot;Name&quot;,
-    &quot;Age&quot;,
-    &quot;Place&quot;
-  ],
-  &quot;actual_list&quot;: [
-    &quot;Manish&quot;,
-    &quot;25&quot;,
-    &quot;Pune&quot;
-  ],
-  &quot;expected&quot;: {
-    &quot;Name&quot;: &quot;Manish&quot;,
-    &quot;Age&quot;: &quot;25&quot;,
-    &quot;Place&quot;: &quot;Pune&quot;
-  }
-}
-
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_texts_dict()
-        Element:         ()
-        Keyword Arguments: 
-{
-  &quot;headers&quot;: [
-    &quot;Name&quot;,
-    &quot;Age&quot;,
-    &quot;Place&quot;
-  ],
-  &quot;actual_list&quot;: [
-    &quot;Praveen&quot;,
-    &quot;29&quot;,
-    &quot;Bangalore&quot;
-  ],
-  &quot;expected&quot;: {
-    &quot;Name&quot;: &quot;Praveen&quot;,
-    &quot;Age&quot;: &quot;29&quot;,
-    &quot;Place&quot;: &quot;Bangalore&quot;
-  }
-}
-
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_texts_dict()
-        Element:         ()
-        Keyword Arguments: 
-{
-  &quot;headers&quot;: [
-    &quot;Name&quot;,
-    &quot;Age&quot;,
-    &quot;Place&quot;
-  ],
-  &quot;actual_list&quot;: [
-    &quot;Dheepthi&quot;,
-    &quot;31&quot;,
-    &quot;Mumbai&quot;
-  ],
-  &quot;expected&quot;: {
-    &quot;Name&quot;: &quot;Dheepthi&quot;,
-    &quot;Age&quot;: &quot;31&quot;,
-    &quot;Place&quot;: &quot;Mumbai&quot;
-  }
-}<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">WebTestSuites/PageContents/test_home_page.py::test_homepage_elements[chromium]</td>
-          <td class="col-duration">8.98</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     root:utils.py:48 
-############ - TESTCASE: check_select_multiple_options - ############
 INFO     root:utils.py:10 -------------------------
-        Function Name:   navigate_to_homepage()
-        Current URL:     about:blank
-        Page Title:      
-        Keyword Arguments: 
-{}
-
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_attributes()
-        Element:         (&lt;Locator frame=&lt;Frame name= url=&#x27;https://omayo.blogspot.com/search?q=sdf&#x27;&gt; selector=&#x27;input[name=&quot;accessories&quot;] &gt;&gt; nth=0&#x27;&gt;,)
+        Function Name:   fill_up_login_form()
+        Current URL:     https://www.saucedemo.com/
+        Page Title:      Swag Labs
         Keyword Arguments: 
 {
-  &quot;attributes&quot;: {
-    &quot;type&quot;: &quot;checkbox&quot;,
-    &quot;name&quot;: &quot;accessories&quot;,
-    &quot;value&quot;: &quot;Pen&quot;
-  }
+  &quot;username&quot;: &quot;standard_user&quot;,
+  &quot;password&quot;: &quot;secret_sauce&quot;
 }
 
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_attributes()
-        Element:         (&lt;Locator frame=&lt;Frame name= url=&#x27;https://omayo.blogspot.com/search?q=sdf&#x27;&gt; selector=&#x27;input[name=&quot;accessories&quot;] &gt;&gt; nth=1&#x27;&gt;,)
-        Keyword Arguments: 
-{
-  &quot;attributes&quot;: {
-    &quot;type&quot;: &quot;checkbox&quot;,
-    &quot;name&quot;: &quot;accessories&quot;,
-    &quot;value&quot;: &quot;Book&quot;,
-    &quot;checked&quot;: true
-  }
-}
-
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_attributes()
-        Element:         (&lt;Locator frame=&lt;Frame name= url=&#x27;https://omayo.blogspot.com/search?q=sdf&#x27;&gt; selector=&#x27;input[name=&quot;accessories&quot;] &gt;&gt; nth=2&#x27;&gt;,)
-        Keyword Arguments: 
-{
-  &quot;attributes&quot;: {
-    &quot;type&quot;: &quot;checkbox&quot;,
-    &quot;name&quot;: &quot;accessories&quot;,
-    &quot;value&quot;: &quot;Laptop&quot;
-  }
-}
-
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_attributes()
-        Element:         (&lt;Locator frame=&lt;Frame name= url=&#x27;https://omayo.blogspot.com/search?q=sdf&#x27;&gt; selector=&#x27;input[name=&quot;accessories&quot;] &gt;&gt; nth=3&#x27;&gt;,)
-        Keyword Arguments: 
-{
-  &quot;attributes&quot;: {
-    &quot;type&quot;: &quot;checkbox&quot;,
-    &quot;name&quot;: &quot;accessories&quot;,
-    &quot;value&quot;: &quot;Bag&quot;
-  }
-}
-
-INFO     root:utils.py:48 
-############ - TESTCASE: check_ordered_unordered_lists - ############
 INFO     root:utils.py:10 -------------------------
-        Function Name:   navigate_to_homepage()
+        Function Name:   click_login_button()
+        Current URL:     https://www.saucedemo.com/
+        Page Title:      Swag Labs
+        Keyword Arguments: 
+{}
+
+INFO     root:utils.py:25 -------------------------
+        Function Name:   check_element_url_and_title()
+        Element/Page:    (&lt;Page url=&#x27;https://www.saucedemo.com/inventory.html&#x27;&gt;,)
+        Keyword Arguments: 
+{
+  &quot;expected_url&quot;: &quot;https://www.saucedemo.com/inventory.html&quot;,
+  &quot;expected_title&quot;: &quot;Swag Labs&quot;
+}<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">WebTestSuites/E2E/test_login.py::test_login_failed[chromium]</td>
+          <td class="col-duration">4.81</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     root:utils.py:10 -------------------------
+        Function Name:   navigate_to_login_page()
         Current URL:     about:blank
         Page Title:      
         Keyword Arguments: 
 {}
 
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_texts_list()
-        Element:         ()
+INFO     root:utils.py:10 -------------------------
+        Function Name:   fill_up_login_form()
+        Current URL:     https://www.saucedemo.com/
+        Page Title:      Swag Labs
         Keyword Arguments: 
 {
-  &quot;actual_list&quot;: [
-    &quot;One&quot;,
-    &quot;Two&quot;,
-    &quot;Three&quot;,
-    &quot;Four&quot;,
-    &quot;Five&quot;,
-    &quot;Six&quot;
-  ],
-  &quot;expected_list&quot;: [
-    &quot;One&quot;,
-    &quot;Two&quot;,
-    &quot;Three&quot;,
-    &quot;Four&quot;,
-    &quot;Five&quot;,
-    &quot;Six&quot;
-  ]
+  &quot;username&quot;: &quot;locked_out_user&quot;,
+  &quot;password&quot;: &quot;secret_sauce&quot;
 }
 
-INFO     root:utils.py:24 -------------------------
-        Function Name:   check_element_texts_list()
-        Element:         ()
+INFO     root:utils.py:10 -------------------------
+        Function Name:   click_login_button()
+        Current URL:     https://www.saucedemo.com/
+        Page Title:      Swag Labs
+        Keyword Arguments: 
+{}
+
+INFO     root:utils.py:10 -------------------------
+        Function Name:   get_login_error_msg()
+        Current URL:     https://www.saucedemo.com/
+        Page Title:      Swag Labs
+        Keyword Arguments: 
+{}
+
+INFO     root:utils.py:25 -------------------------
+        Function Name:   check_element_url_and_title()
+        Element/Page:    (&lt;Page url=&#x27;https://www.saucedemo.com/&#x27;&gt;,)
         Keyword Arguments: 
 {
-  &quot;actual_list&quot;: [
-    &quot;Apple&quot;,
-    &quot;Mango&quot;,
-    &quot;Orange&quot;,
-    &quot;Banana&quot;,
-    &quot;Grapes&quot;,
-    &quot;Pomegranate&quot;
-  ],
-  &quot;expected_list&quot;: [
-    &quot;Apple&quot;,
-    &quot;Mango&quot;,
-    &quot;Orange&quot;,
-    &quot;Banana&quot;,
-    &quot;Grapes&quot;,
-    &quot;Pomegranate&quot;
-  ]
+  &quot;expected_url&quot;: &quot;https://www.saucedemo.com/&quot;,
+  &quot;expected_title&quot;: &quot;Swag Labs&quot;
+}
+
+INFO     root:utils.py:25 -------------------------
+        Function Name:   check_element_string()
+        Element/Page:    ()
+        Keyword Arguments: 
+{
+  &quot;actual&quot;: &quot;Epic sadface: Sorry, this user has been locked out.&quot;,
+  &quot;expected&quot;: &quot;Epic sadface: Sorry, this user has been locked out.&quot;
 }<br/></div></td></tr></tbody></table></body></html>

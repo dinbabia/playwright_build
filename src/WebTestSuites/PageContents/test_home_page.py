@@ -1,21 +1,20 @@
-from playwright.sync_api import Page, expect, BrowserContext, Browser
-from WebTestSuites.E2E.login_actions import LoginActions
+from playwright.sync_api import Page
 from csv_reader import *
-from WebTestSuites.PageContents.page_checker import PageChecker
+from WebTestSuites.checker import Checker
 from WebTestSuites._locators.homepage_loc import *
-import logging
+from WebTestSuites.common import CommonActions
 from utils import log_test_title
 
 
-step = LoginActions
-check = PageChecker
+common_step = CommonActions
+check = Checker
 SELECT_MULTIPLE_OPTIONS = CSVKeyKeyValue(filename="homepage_select_multiple_options-kkv.csv")
-ORDERED_UNORDERED_LISTS = CSVKeyValue(filename="homepage_ordered_unordered_lists-kkv.csv")
+ORDERED_UNORDERED_LISTS = CSVKeyValue(filename="homepage_ordered_unordered_lists-kv.csv")
 TABLE_CONTENTS = CSVHeaders(filename="homepage_table-h.csv")
 
 def test_homepage_select_multiple_options(page: Page) -> None:
 
-    step.navigate_to_homepage(page)
+    common_step.navigate_to_homepage(page)
     # Check First Option Attributes
     pen_checkbox = page.locator(select_multiple_options_loc).first
     check.check_element_attributes(pen_checkbox,
@@ -36,7 +35,7 @@ def test_homepage_select_multiple_options(page: Page) -> None:
 
 def test_homepage_ordered_unordered_lists(page : Page) -> None:
 
-    step.navigate_to_homepage(page)
+    common_step.navigate_to_homepage(page)
     # Check Ordered List
     ordered_list = page.locator(ordered_list_loc)
     check.check_element_texts_list(actual_list = ordered_list.all_inner_texts(),
@@ -48,7 +47,7 @@ def test_homepage_ordered_unordered_lists(page : Page) -> None:
 
 def test_homepage_table(page : Page) -> None:
     
-    step.navigate_to_homepage(page)
+    common_step.navigate_to_homepage(page)
     # Get header names from table
     headers = page.locator(table_header_loc).all_inner_texts()
     # Check row one
@@ -70,10 +69,8 @@ def test_homepage_table(page : Page) -> None:
 
 def test_homepage_elements(page: Page) -> None:
 
-    
-    
     log_test_title(test_title="check_select_multiple_options")
-    step.navigate_to_homepage(page)
+    common_step.navigate_to_homepage(page)
     # Check First Option Attributes
     pen_checkbox = page.locator(select_multiple_options_loc).first
     check.check_element_attributes(pen_checkbox,
@@ -93,7 +90,7 @@ def test_homepage_elements(page: Page) -> None:
 
     log_test_title(test_title="check_ordered_unordered_lists")
     page2 = page.context.new_page()
-    step.navigate_to_homepage(page2)
+    common_step.navigate_to_homepage(page2)
     # Check Ordered List
     ordered_list = page2.locator(ordered_list_loc)
     check.check_element_texts_list(actual_list = ordered_list.all_inner_texts(),

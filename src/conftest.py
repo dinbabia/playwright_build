@@ -21,7 +21,6 @@ def browser_context_args(browser_context_args):
 def pytest_html_report_title(report):
     report.title = PROJECT_NAME
 
-
 def pytest_configure(config):
     config._metadata["Tester Name"] = TESTER_NAME
 

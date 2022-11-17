@@ -1,7 +1,18 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import expect
 from utils import *
 
-class PageChecker:
+class Checker:
+
+    @log_page_info
+    def check_element_string(actual:str = None, expected:str = None):
+        '''Compare if both strings are equal'''
+        assert str(actual) == str(expected), f"[FAIL - ASSERTION] ACTUAL str(actual): {str(actual)} vs. EXPECTED str(expected): {str(expected)}"
+
+    @log_page_info
+    def check_element_url_and_title(page, expected_url:str = None, expected_title:str = None):
+        '''Compare if both strings are equal'''
+        expect(page).to_have_url(expected_url)
+        expect(page).to_have_title(expected_title)
 
     @log_page_info
     def check_element_attributes(element, attributes:dict = None):

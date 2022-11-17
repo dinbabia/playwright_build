@@ -1,31 +1,29 @@
-from playwright.sync_api import Page, expect
 from utils import *
+from WebTestSuites._locators.loginpage_loc import *
 
 class LoginActions:
-
-    @log_info
-    def navigate_to_homepage(page):
-        # Go to hompage
-        page.goto("")
-        # Click My Account Link to login
-        expect(page).to_have_url("https://omayo.blogspot.com/search?q=sdf")
-        expect(page).to_have_title("omayo (QAFox.com): Search results for sdf")
-        
+ 
     @log_info
     def fill_up_login_form(page,
-        email :str = None,
+        username :str = None,
         password :str = None
         ):
-        if email:
-            page.get_by_label("Your Email").click()
-            page.get_by_label("Your Email").fill(email)
+        if username:
+            page.locator(username_field_loc).click()
+            page.locator(username_field_loc).fill(username)
         if password:
-            page.get_by_label("Password").click()
-            page.get_by_label("Password").fill(password)
+            page.locator(password_field_loc).click()
+            page.locator(password_field_loc).fill(password)
             
     @log_info
     def click_login_button(page):
-        page.get_by_role("button", name="Sign in").click()
+        page.locator(login_button_loc).click()
+
+    @log_info
+    def get_login_error_msg(page) -> str:
+        error_msg = page.locator(error_msg_loc).inner_text()
+        return error_msg
+
 
 
         

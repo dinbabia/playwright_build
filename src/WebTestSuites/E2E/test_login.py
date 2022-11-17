@@ -1,57 +1,55 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 from WebTestSuites.E2E.login_actions import LoginActions
 from csv_reader import *
 from WebTestSuites.common import CommonActions
-import logging
+from WebTestSuites.checker import Checker
+
 
 
 step = LoginActions
 common_step = CommonActions
-VALID_ACCOUNTS = CSVHeaders(filename="invalid_accounts.csv")
-INVALID_ACCOUNTS = CSVHeaders(filename="invalid_accounts.csv")
-KEY_VALUES = CSVKeyValue(filename="key_values.csv")
+check_step = Checker
+VALID_ACCOUNTS = CSVHeaders(filename="loginpage_valid_accounts.csv")
+INVALID_ACCOUNTS = CSVHeaders(filename="loginpage_invalid_accounts.csv")
 
-# def test_login_success(page : Page) -> None:
+
+def test_login_success(page : Page) -> None:
    
-#     step.navigate_to_homepage(page)
-#     # Fill up login form
-#     step.fill_up_login_form(page, email=VALID_ACCOUNTS.data[0]['email'], password=VALID_ACCOUNTS.data[0]['password'])
-#     # Click Login
-#     step.click_login_button(page)
+    common_step.navigate_to_login_page(page)
+    # Fill up login form
+    step.fill_up_login_form(page, 
+        username=VALID_ACCOUNTS.data[0]['username'], 
+        password=VALID_ACCOUNTS.data[0]['password'])
+    # Click Login
+    step.click_login_button(page)
     
-#     # ---Assertions---
-#     expect(page).to_have_url("https://www.coilcraft.com/en-us/profile/")
+    # ---Assertions--- #
+    check_step.check_element_url_and_title(page,
+        expected_url="https://www.saucedemo.com/inventory.html",
+        expected_title="Swag Labs")
 
-# def test_empty_email_and_password(page : Page) -> None:
+def test_login_failed(page : Page) -> None:
+   
+    common_step.navigate_to_login_page(page)
+    # Fill up login form
+    step.fill_up_login_form(page, 
+        username=INVALID_ACCOUNTS.data[0]['username'], 
+        password=INVALID_ACCOUNTS.data[0]['password'])
+    # Click Login
+    step.click_login_button(page)
+    # Get error message
+    error_message = step.get_login_error_msg(page)
 
-#     step.navigate_to_homepage(page)
-#     # Click Login
-#     step.click_login_button(page)
-#     #Get validation messages
-#     empty_email_message = page.get_by_text("The Email address cannot be empty")
-#     empty_password_message = page.get_by_text("Password cannot be empty")
+    # ---Assertions--- #
+    check_step.check_element_url_and_title(page,
+        expected_url="https://www.saucedemo.com/",
+        expected_title="Swag Labs")
+
+    check_step.check_element_string(actual=error_message,
+        expected="Epic sadface: Sorry, this user has been locked out.")
     
-#     # ---Assertions---
-#     expect(empty_email_message).to_have_text("The Email address cannot be empty")
-#     expect(empty_password_message).to_have_text("Password cannot be empty")
+    
 
 
-# def test_incorrect_email_format(page : Page) -> None:
- 
-#     step.navigate_to_homepage(page)
-#     # Fill up login form
-#     step.fill_up_login_form(page, email="invalid_email", password="123")
-#     # Click Login
-#     step.click_login_button(page)
-
-#     invalid_email_format_message = page.get_by_text("Incorrect E-Mail address format")
-
-#     # ---Assertions---
-#     expect(invalid_email_format_message).to_have_text("Incorrect E-Mail address format")
-
-
-# def test_key_values():
-#     print(KEY_VALUES.data)    
-#     print(VALID_ACCOUNTS.data)
     
     

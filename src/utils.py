@@ -14,7 +14,8 @@ def log_info(func):
         Keyword Arguments: 
 {json.dumps(kwargs, indent=2)}\n""")
 
-        func(*args, **kwargs)
+        result = func(*args, **kwargs)
+        return result
     return wrapper
 
 def log_page_info(func):
@@ -23,7 +24,7 @@ def log_page_info(func):
         # It SHOULD NOT PASS any keyword arguments with value of a class
         logging.info(f"""{"-"*25}
         Function Name:   {func.__name__}()
-        Element:         {args}
+        Element/Page:    {args}
         Keyword Arguments: 
 {json.dumps(kwargs, indent=2)}\n""")
 
@@ -44,5 +45,4 @@ def log_assert_actual_expected(func):
     return wrapper
 
 def log_test_title(test_title:str):
-    
     logging.info(f"\n{'#'*12} - TESTCASE: {test_title} - {'#'*12}")

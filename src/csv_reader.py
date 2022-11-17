@@ -3,6 +3,7 @@ import csv
 
 
 class CSVHeaders:
+    
     def __init__(self, filename) -> None:
         # Read Excel and its specific sheetname
         self._ROOT_DIR = Path(__file__).parent.parent
