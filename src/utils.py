@@ -43,3 +43,6 @@ def log_assert_actual_expected(func):
         func(*args, **kwargs)
     return wrapper
 
+def log_test_title(test_title:str):
+    
+    logging.info(f"\n{'#'*12} - TESTCASE: {test_title} - {'#'*12}")

@@ -1,8 +1,10 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page, expect, BrowserContext, Browser
 from WebTestSuites.E2E.login_actions import LoginActions
 from csv_reader import *
 from WebTestSuites.PageContents.page_checker import PageChecker
 from WebTestSuites._locators.homepage_loc import *
+import logging
+from utils import log_test_title
 
 
 step = LoginActions
@@ -65,3 +67,38 @@ def test_homepage_table(page : Page) -> None:
     row_four = page.locator(table_row_loc.format(row_number=4)).all_inner_texts()
     check.check_element_texts_dict(headers=headers,
         actual_list=row_four, expected=TABLE_CONTENTS.data[3])
+
+def test_homepage_elements(page: Page) -> None:
+
+    
+    
+    log_test_title(test_title="check_select_multiple_options")
+    step.navigate_to_homepage(page)
+    # Check First Option Attributes
+    pen_checkbox = page.locator(select_multiple_options_loc).first
+    check.check_element_attributes(pen_checkbox,
+        attributes=SELECT_MULTIPLE_OPTIONS.data["pen"])
+    # Check Second Option Attributes (checked)
+    book_checkbox = page.locator(select_multiple_options_loc).nth(1)
+    check.check_element_attributes(book_checkbox,
+        attributes=SELECT_MULTIPLE_OPTIONS.data["book"])
+    # Check Third Option Attributes
+    laptop_checkbox = page.locator(select_multiple_options_loc).nth(2)
+    check.check_element_attributes(laptop_checkbox,
+        attributes=SELECT_MULTIPLE_OPTIONS.data["laptop"])
+    # Check Fourth Option Attributes
+    bag_checkbox = page.locator(select_multiple_options_loc).nth(3)
+    check.check_element_attributes(bag_checkbox,
+        attributes=SELECT_MULTIPLE_OPTIONS.data["bag"])
+
+    log_test_title(test_title="check_ordered_unordered_lists")
+    page2 = page.context.new_page()
+    step.navigate_to_homepage(page2)
+    # Check Ordered List
+    ordered_list = page2.locator(ordered_list_loc)
+    check.check_element_texts_list(actual_list = ordered_list.all_inner_texts(),
+        expected_list = ORDERED_UNORDERED_LISTS.data["ordered_list"])
+    # Check Unordered List
+    unordered_list = page2.locator(unordered_list_loc)
+    check.check_element_texts_list(actual_list = unordered_list.all_inner_texts(),
+        expected_list = ORDERED_UNORDERED_LISTS.data["unordered_list"])
